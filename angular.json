@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tp02-TopEsp2"
+    }
+  },
+  "defaultProject": "tp02-TopEsp2",
+  "cli": {
+    "analytics": "bf4cea02-f590-400f-ad16-1fa9754a1238"
+  }
 }
