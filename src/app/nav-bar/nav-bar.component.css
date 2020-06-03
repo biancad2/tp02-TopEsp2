@@ -1,0 +1,11 @@
+.notif{
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 50%;
+    height: 10px;
+    background: #ff0000;
+    border-color: #fa5a35;
+}
+.notif-off{
+    display: none;
+}
