@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { IndexComponent } from './index/index.component';
 import { BitcoinComponent } from './bitcoin/bitcoin.component';
+import { StoreComponent } from './store/store.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     IndexComponent,
-    BitcoinComponent
+    BitcoinComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,
