@@ -25,7 +25,7 @@ export class BitcoinComponent implements OnInit {
   }
 
   update() {
-    this.timerService.start(60000);
+    this.timerService.start(30000);
     //this.bitcoinService.update();
     //this.logger.add('ListBitcoinComponent rates updated');
   }
