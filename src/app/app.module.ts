@@ -8,6 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { IndexComponent } from './index/index.component';
 import { BitcoinComponent } from './bitcoin/bitcoin.component';
 import { StoreComponent } from './store/store.component';
+import { BitcoinBrComponent } from './bitcoinbr/bitcoinbr.component';
 
 
 
@@ -17,7 +18,8 @@ import { StoreComponent } from './store/store.component';
     NavBarComponent,
     IndexComponent,
     BitcoinComponent,
-    StoreComponent
+    StoreComponent,
+    BitcoinBrComponent
   ],
   imports: [
     BrowserModule,
