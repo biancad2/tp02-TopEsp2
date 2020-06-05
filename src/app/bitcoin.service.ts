@@ -52,7 +52,7 @@ export class BitcoinService {
       .subscribe(data => {
         this.lastUpdate = new Date();
         this.currentPrice = data;
-        for (let teste in this.mountList){
+        for (let teste in this.mountList) {
           if (this.currentPrice.bpi.USD.rate_float !== this.mountList.slice(-1)[0].USD) {
             this.mountList.push({
               timestamp: this.lastUpdate,
@@ -60,11 +60,11 @@ export class BitcoinService {
               GBP: this.currentPrice.bpi.GBP.rate_float,
               EUR: this.currentPrice.bpi.EUR.rate_float
             });
-              document.querySelector('#notification').classList.add("notif");
-              document.querySelector('#notification').classList.remove("notif-off");       
+            document.querySelector('#notification').classList.add("notif");
+            document.querySelector('#notification').classList.remove("notif-off");
           }
-        } 
-        
+        }
+
       });
   }
 }

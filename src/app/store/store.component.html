@@ -1,1 +1,40 @@
 <h1>Lojinha de Bitcoin</h1>
+<div>
+    <input #moneyInput type="number" placeholder="Digite o valor que deseja comprar (em reais)" />
+    <button (click)="this.storeService.buy(moneyInput.value); moneyInput.value=''" class=" btn-success">Comprar</button>
+
+    <h2>Disponível: {{this.storeService.initialMoney | currency:'BRL'}}</h2>
+
+    <div *ngIf="this.storeService.getValue(); else elseBlock">
+        <h3 class="card-text">
+            Você tem: {{this.storeService.getValue()}} bitcoins
+        </h3>
+        <button (click)="this.storeService.sell()" class="btn btn-sm btn-success">Vender</button>
+    </div>
+    <ng-template #elseBlock>
+        <p class="card-text">
+        <p>Você ainda não tem bitcoins</p>
+    </ng-template>
+    <p>Valor de venda: {{this.storeService.getSellValue()}}</p>
+
+    <table class="table">
+        <tr>
+            <th scope="col">Timestamp</th>
+            <th scope="col">Bitcoin em $</th>
+            <th scope="col">Bitcoin em R$</th>
+            <th scope="col">Valor de compra/venda</th>
+            <th scope="col">Valor resultante</th>
+            <th scope="col">Seus Bitcoins </th>
+            <th scope="col">Tipo de transição</th>
+        </tr>
+        <tr *ngFor="let transition of this.storeService.transitionList">
+            <td>{{transition.timestamp | date:"full"}}</td>
+            <td>{{transition.USD}}</td>
+            <td>{{transition.BRL}}</td>
+            <td>{{transition.amount}}</td>
+            <td>{{transition.initialMoney}}</td>
+            <td>{{transition.valueBitcoin}}</td>
+            <td>{{transition.typeTransition}}</td>
+        </tr>
+    </table>
+</div>
