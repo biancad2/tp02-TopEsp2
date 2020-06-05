@@ -63,6 +63,7 @@ export class BitcoinService {
               
               document.querySelector('#notification').classList.add("notif");
               document.querySelector('#notification').classList.remove("notif-off");
+              
            
           }
         } 

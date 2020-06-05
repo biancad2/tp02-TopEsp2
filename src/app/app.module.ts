@@ -9,6 +9,7 @@ import { IndexComponent } from './index/index.component';
 import { BitcoinComponent } from './bitcoin/bitcoin.component';
 import { StoreComponent } from './store/store.component';
 import { BitcoinBrComponent } from './bitcoinbr/bitcoinbr.component';
+import { IntegrantesComponent } from './integrantes/integrantes.component';
 
 
 
@@ -19,7 +20,8 @@ import { BitcoinBrComponent } from './bitcoinbr/bitcoinbr.component';
     IndexComponent,
     BitcoinComponent,
     StoreComponent,
-    BitcoinBrComponent
+    BitcoinBrComponent,
+    IntegrantesComponent
   ],
   imports: [
     BrowserModule,

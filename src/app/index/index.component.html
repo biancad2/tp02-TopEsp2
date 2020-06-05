@@ -1,43 +1,36 @@
-<h1>Integrantes</h1>
-
 <div class="album py-5 bg-light">
     <div class="container ">
+        <h1>Integrantes</h1>
         <div class="row d-flex justify-content-center">
-            <div class="col-md-5">
+            <div class="col-md-5" >
                 <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail">
-                        <title>Bianca</title>
-                        <rect width="100%" height="100%" fill="#55595c"/>
-                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">Bianca</text>
-                    </svg>
-
+                    
+                    <img src="{{this.integrantesService.perfilBianca.avatar_url}}" class="card-img-top p-3"/>
+                    
                     <div class="card-body">
-                        <p class="card-text">Qualquer coisa</p>
+                        <h2 class="card-title">Bianca</h2>
+                        <p class="card-text" *ngIf="this.integrantesService.perfilBianca.bio; else elseBlock"> {{this.integrantesService.perfilBianca.bio}}</p>
+                        <ng-template #elseBlock><p class="card-text">Não possuí descrição</p></ng-template>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Insta</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Linkedin</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Git</button>
+                                <a href="{{this.integrantesService.perfilBianca.html_url}}" class="btn btn-sm btn-outline-secondary">GitHub</a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5" >
                 <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail">
-                        <title>Bianca</title>
-                        <rect width="100%" height="100%" fill="#55595c"/>
-                        <text x="50%" y="50%" fill="#eceeef" dy=".3em">Gabi</text>
-                    </svg>
-
+                   
+                    <img src="{{this.integrantesService.perfilGabi.avatar_url}}"  class="card-img-top p-3"/>
                     <div class="card-body">
-                        <p class="card-text">Qualquer coisa</p>
+                        <h2 class="card-title">Gabrielli</h2>
+                        <p class="card-text" *ngIf="this.integrantesService.perfilGabi.bio; else elseBlock"> {{this.integrantesService.perfilGabi.bio}}</p>
+                        <ng-template #elseBlock ><p class="card-text">Não possuí descrição</p></ng-template>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Insta</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Linkedin</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Git</button>
+                                <a href="{{this.integrantesService.perfilGabi.html_url}}" class="btn btn-sm btn-outline-secondary">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -46,3 +39,18 @@
         </div>
     </div>
 </div>
+
+  
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="...">
+      <strong class="mr-auto">Bootstrap</strong>
+      <small class="text-muted">2 seconds ago</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Heads up, toasts will stack automatically
+    </div>
+  </div>

@@ -1,11 +1,13 @@
 .notif{
     display: inline-block;
-    border: 1px solid;
+    margin-left: 5px;
     border-radius: 50%;
     height: 10px;
     background: #ff0000;
-    border-color: #fa5a35;
 }
 .notif-off{
     display: none;
+}
+.toast{
+    z-index: 100;
 }

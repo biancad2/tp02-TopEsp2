@@ -21,7 +21,7 @@
     <span>&nbsp;Updated in {{this.bitcoinService.lastUpdate | date:"full"}}</span>
 </div>
 <hr />
-<h2>Update histoty</h2>
+<h2>Update history</h2>
 <table class="table">
     <tr>
         <th scope="col">Timestamp</th>
@@ -29,7 +29,7 @@
         <th scope="col">GBP</th>
         <th scope="col">EUR</th>
     </tr>
-    <tr *ngFor="let price of this.bitcoinService.mountList; index as index">
+    <tr *ngFor="let price of this.bitcoinService.mountList">
             <td>{{price.timestamp | date:"full"}}</td>
             <td>{{price.USD | currency}}</td>
             <td>{{price.GBP | currency}}</td>
