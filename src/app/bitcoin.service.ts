@@ -31,21 +31,41 @@ export class BitcoinService {
   currentPrice: Response;
   lastUpdate: Date;
 
-  updateList: Array<PriceUpdate> = [];
-
+  mountList: Array<PriceUpdate> = [];
+  updateList: Array<PriceUpdate>=[];
   constructor(private http: HttpClient) { }
-
+  start(){
+    this.http.get<Response>('https://api.coindesk.com/v1/bpi/currentprice.json')
+    .subscribe(data => {
+      this.lastUpdate = new Date();
+      this.currentPrice = data;
+      this.mountList.push({
+        timestamp: this.lastUpdate,
+        USD: this.currentPrice.bpi.USD.rate_float,
+        GBP: this.currentPrice.bpi.GBP.rate_float,
+        EUR: this.currentPrice.bpi.EUR.rate_float
+      });
+    })
+  }
   update() {
     this.http.get<Response>('https://api.coindesk.com/v1/bpi/currentprice.json')
       .subscribe(data => {
         this.lastUpdate = new Date();
         this.currentPrice = data;
-        this.updateList.push({
-          timestamp: this.lastUpdate,
-          USD: this.currentPrice.bpi.USD.rate_float,
-          GBP: this.currentPrice.bpi.GBP.rate_float,
-          EUR: this.currentPrice.bpi.EUR.rate_float
-        });
+        for(let teste of this.mountList){
+          if(this.currentPrice.bpi.USD.rate_float !== this.mountList.slice(-1)[0].USD || 
+          this.currentPrice.bpi.USD.rate_float !== this.mountList.slice(-1)[0].GBP || 
+          this.currentPrice.bpi.USD.rate_float !== this.mountList.slice(-1)[0].EUR ){
+            this.mountList.push({
+              timestamp: this.lastUpdate,
+              USD: this.currentPrice.bpi.USD.rate_float,
+              GBP: this.currentPrice.bpi.GBP.rate_float,
+              EUR: this.currentPrice.bpi.EUR.rate_float
+            });
+          }
+        }
+        
+       
       });
   }
 }

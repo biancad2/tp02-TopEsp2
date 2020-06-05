@@ -29,10 +29,10 @@
         <th scope="col">GBP</th>
         <th scope="col">EUR</th>
     </tr>
-    <tr *ngFor="let price of this.bitcoinService.updateList">
-        <td>{{price.timestamp | date:"full"}}</td>
-        <td>{{price.USD | currency}}</td>
-        <td>{{price.GBP | currency}}</td>
-        <td>{{price.EUR | currency}}</td>
+    <tr *ngFor="let price of this.bitcoinService.mountList; index as index">
+            <td>{{price.timestamp | date:"full"}}</td>
+            <td>{{price.USD | currency}}</td>
+            <td>{{price.GBP | currency}}</td>
+            <td>{{price.EUR | currency}}</td>
     </tr>
 </table>
