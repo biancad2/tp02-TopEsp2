@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BiticoinBRLService } from './biticoin-brl.service';
+import { BitcoinBRLService } from './bitcoin-brl.service';
 
-describe('BiticoinBRLService', () => {
-  let service: BiticoinBRLService;
+describe('BitcoinBRLService', () => {
+  let service: BitcoinBRLService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(BiticoinBRLService);
+    service = TestBed.inject(BitcoinBRLService);
   });
 
   it('should be created', () => {

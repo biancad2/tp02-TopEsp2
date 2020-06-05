@@ -7,9 +7,10 @@ import { StoreService } from '../store.service';
   styleUrls: ['./store.component.css']
 })
 export class StoreComponent implements OnInit {
-  constructor(public storeService: StoreService) { }
+  constructor() { }
 
   ngOnInit() {
+    
   }
 
 

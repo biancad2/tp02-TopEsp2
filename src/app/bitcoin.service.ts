@@ -60,11 +60,8 @@ export class BitcoinService {
               GBP: this.currentPrice.bpi.GBP.rate_float,
               EUR: this.currentPrice.bpi.EUR.rate_float
             });
-              
               document.querySelector('#notification').classList.add("notif");
-              document.querySelector('#notification').classList.remove("notif-off");
-              
-           
+              document.querySelector('#notification').classList.remove("notif-off");       
           }
         } 
         

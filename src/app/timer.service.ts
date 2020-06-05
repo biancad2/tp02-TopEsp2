@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {BitcoinService} from './bitcoin.service';
+import { BitcoinService } from './bitcoin.service';
+import { BitcoinBRLService } from './bitcoin-brl.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,25 +10,35 @@ export class TimerService {
   private timer: any;
   public counter = 0;
 
-  constructor(public bitcoinService: BitcoinService) { }
+  constructor(public bitcoinService: BitcoinService, public bitcoinBRLService: BitcoinBRLService) { }
 
-  start(ms: number) {
-    this.bitcoinService.start();
+  startUS(ms: number) {
     if (!this.timer) {
+      this.bitcoinService.start();
       this.timer = setInterval(
         () => {
           this.bitcoinService.update();
           this.counter++;
-          
         }, ms
       )
     }
   }
 
-  stop(){
-    if(this.timer){
+  startBR(ms: number) {
+    if (!this.timer) {
+      this.timer = setInterval(
+        () => {
+          this.bitcoinBRLService.update();
+          this.counter++;
+        }, ms
+      )
+    }
+  }
+
+  stop() {
+    if (this.timer) {
       clearInterval(this.timer);
-      this.timer=null;
+      this.timer = null;
     }
   }
 }

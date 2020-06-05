@@ -1,26 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-interface Response {
-  time: {
-    updated: string;
-  };
-  disclaimer: string;
-  bpi: {
-    USD: {
-      symbol: string;
-      description; string;
-      rate_float: number;
-      rate: string;
-    };
-    BRL: {
-      symbol: string;
-      description: string;
-      rate_float: number;
-      rate: string;
-    };
-  };
-}
+import {BitcoinBRLService} from '../bitcoin-brl.service';
+import {TimerService} from '../timer.service';
 
 @Component({
   selector: 'app-bitcoinbr',
@@ -28,20 +8,21 @@ interface Response {
   styleUrls: ['./bitcoinbr.component.css']
 })
 export class BitcoinBrComponent implements OnInit {
-  currentPrice: Response;
-  lastUpdate: Date;
+  
 
-  constructor(private http: HttpClient) { }
+  constructor(public bitcoinBRLService: BitcoinBRLService, public timerService: TimerService) { }
 
   ngOnInit() {
     this.update();
   }
 
-  update() {
-    this.http.get<Response>('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
-      .subscribe(data => {
-        this.lastUpdate = new Date();
-        this.currentPrice = data;
-      });
+  getCurrentPrice(){
+    return this.bitcoinBRLService.currentPrice;
   }
+  update(){
+    this.bitcoinBRLService.update();
+    this.timerService.startBR(30000);
+  }
+
+  
 }

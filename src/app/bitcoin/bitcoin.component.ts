@@ -16,7 +16,6 @@ export class BitcoinComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.logger.add('ListBitcoinComponent initialized');
     this.update();
   }
 
@@ -25,8 +24,7 @@ export class BitcoinComponent implements OnInit {
   }
 
   update() {
-    this.timerService.start(30000);
-    //this.bitcoinService.update();
-    //this.logger.add('ListBitcoinComponent rates updated');
+    this.timerService.startUS(30000);
+    
   }
 }
