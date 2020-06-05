@@ -67,4 +67,8 @@ export class BitcoinService {
 
       });
   }
+  removeNotification() {
+    document.querySelector('#notification').classList.remove("notif");
+    document.querySelector('#notification').classList.add("notif-off");
+  }
 }

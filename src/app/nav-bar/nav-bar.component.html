@@ -12,7 +12,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/bitcoin']" [routerLinkActive]="['active']">BitCoin$<span
-                        class="badge"  id="notification" [routerLinkActive]="['notif-off']"></span></a>
+                        class="badge" id="notification" [routerLinkActive]="['notif-off']"></span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/bitcoinbr']" [routerLinkActive]="['active']">BitCoin$ BR<span
@@ -23,7 +23,9 @@
             </li>
         </ul>
     </div>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/bitcoin']" [routerLinkActive]="['active']"
+            (click)="this.bitcoinService.removeNotification()">BitCoin$<span class="badge" id="notification"
+                [routerLinkActive]="['notif-off']"></span></a>
+    </li>
 </nav>
-
-
-
