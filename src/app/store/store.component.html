@@ -1,1 +1,7 @@
-<p>store works!</p>
+<h1>Lojinha de Bitcoin</h1>
+<div>
+    <input #moneyInput type="number" />
+    <button (click)="this.storeService.buy(moneyInput.value)">Comprar</button>
+
+    <h2>{{this.storeService.initialMoney}}</h2>
+</div>
